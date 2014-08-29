@@ -1,0 +1,23 @@
+.title-txt{
+	text-align: center;
+}
+.func-btn{
+	width: 100%;
+}
+#login-view{
+	margin-top: 40px;
+}
+#login-form .alert.alert-danger{
+	margin-bottom: 0;
+}
+.name-col{
+	width: 40%;
+}
+#holder{
+	height: 300px;
+	border:5px solid #000;
+	margin: 0 auto;
+}
+#holder.hover{
+	border:5px solid #333;
+}

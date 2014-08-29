@@ -1,0 +1,60 @@
+{
+  "name": "docxtemplater",
+  "version": "0.6.3",
+  "author": {
+    "name": "Edgar Hipp"
+  },
+  "description": "A docX templater",
+  "contributors": [
+    {
+      "name": "Edgar Hipp"
+    }
+  ],
+  "main": "js/docxgen.js",
+  "bin": {
+    "docxtemplater": "./cli/bin/docxgen.js"
+  },
+  "keywords": [
+    "docx",
+    "templates",
+    "generation",
+    "microsoft word"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/edi9999/docxtemplater"
+  },
+  "dependencies": {
+    "xmldom": "0.1.x",
+    "angular-expressions": "~0.2.1"
+  },
+  "devDependencies": {
+    "gulp": "~3.8.0",
+    "gulp-util": "~2.2.14",
+    "gulp-coffee": "~2.0.1",
+    "gulp-watch": "~0.6.5",
+    "gulp-concat": "~2.2.0",
+    "gulp-uglify": "~0.3.0",
+    "gulp-livereload": "~2.1.0",
+    "gulp-notify": "^1.2.5",
+    "gulp-jasmine": "^0.2.0"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=0.10"
+  },
+  "scripts": {
+    "test": "jasmine-node test/spec/docxgenTest.spec.js"
+  },
+  "readme": "# DocxTemplater\n\n[![Build Status](https://travis-ci.org/edi9999/docxtemplater.svg?branch=master)](https://travis-ci.org/edi9999/docxtemplater)\n[![Download count](http://img.shields.io/npm/dm/docxtemplater.svg)](https://www.npmjs.org/package/docxtemplater)\n[![Current tag](http://img.shields.io/npm/v/docxtemplater.svg)](https://www.npmjs.org/package/docxtemplater)\n\n**docxtemplater** is a library to generate docx documents from a docx template. It can replace tags by their values and replace images with other images. It is very user oriented as users can without a lot of programming knowledge create their first template and automatically change variables in it.\n\n## Documentation\n\nThe full documentation can be found on [read the docs](http://docxtemplater.readthedocs.org/en/latest/).\n\n## Demo\n\n[All demos can be found here](http://javascript-ninja.fr/docxgenjs/examples/demo.html)\n\nIncluding:\n\n- <a href=\"http://javascript-ninja.fr/docxgenjs/examples/demo.html#variables\">Replace Variables</a><br>\n- <a href=\"http://javascript-ninja.fr/docxgenjs/examples/demo.html#formating\">Formating</a><br>\n- <a href=\"http://javascript-ninja.fr/docxgenjs/examples/demo.html#parsing\">Angular Parsing</a><br>\n- <a href=\"http://javascript-ninja.fr/docxgenjs/examples/demo.html#loops\">Loops</a><br>\n- <a href=\"http://javascript-ninja.fr/docxgenjs/examples/demo.html#tables\">Loops and tables</a><br>\n- <a href=\"http://javascript-ninja.fr/docxgenjs/examples/demo.html#lists\">Lists</a><br>\n- <a href=\"http://javascript-ninja.fr/docxgenjs/examples/demo.html#images\">Replacing images</a><br>\n- <a href=\"http://javascript-ninja.fr/docxgenjs/examples/demo.html#naming\">Naming the output</a><br>\n- <a href=\"http://javascript-ninja.fr/docxgenjs/examples/demo.html#qrcode\">Using QrCodes</a><br>\n- <a href=\"http://javascript-ninja.fr/docxgenjs/examples/demo.html#qrcodeloop\">Replacing many images with QrCode</a><br>\n- <a href=\"http://javascript-ninja.fr/docxgenjs/examples/demo.html#rawxml\">Raw Xml Insertion</a><br>\n\n\n\n## Quickstart\n\nInstallation: `npm install docxtemplater`\n\n    var DocXTemplater= require('docxtemplater');\n\n    //loading the file\n    docxtemplater=new DocXTemplater().loadFromFile(\"tagExample.docx\");\n\n    //setting the tags\n    docxtemplater.setTags({\"name\":\"Edgar\"});\n\n    //when finished\n    docxtemplater.finishedCallback=function () {\n        docxtemplater.output();\n    }\n\n    //apply the tags\n    docxtemplater.applyTags();\n\nYou can download [tagExample.docx](https://github.com/edi9999/docxtemplater/raw/master/examples/tagExample.docx) and put it in the same folder than your script.\n\n\n## Known issues\n\nTodo:\n\n - [ ] Incompatibility with IE: Error : SCRIPT5022: End of stream reached (stream length = 14578, asked index = 18431). Corrupted zip ?\n - [ ] Use FileSaver API for output http://eligrey.com/blog/post/saving-generated-files-on-the-client-side\n - [ ] stop overflooding the global scope:\n     - DocUtils\n     - XmlTemplater\n     - jsQrCode\n     - jsZip\n     - DocXTemplater\n     - ScopeManager\n     - XmlMatcher\n - [ ] output with FileSaver.js to name your file\n - [ ] Remove the node/browser specific code when possible\n - [ ] When not possible, create a NodeSpecific File or BrowserSpecific File\n",
+  "readmeFilename": "readme.md",
+  "bugs": {
+    "url": "https://github.com/edi9999/docxtemplater/issues"
+  },
+  "_id": "docxtemplater@0.6.3",
+  "dist": {
+    "shasum": "282ac3400ed0f252106052cdb6c8ed1aa0648351"
+  },
+  "_from": "docxtemplater@*",
+  "_resolved": "https://registry.npmjs.org/docxtemplater/-/docxtemplater-0.6.3.tgz"
+}

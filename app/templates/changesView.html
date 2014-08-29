@@ -1,0 +1,164 @@
+<div class="row">
+	<div class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3">
+		<!--Big Blue changes (site level)-->
+		<div ng-if="siteBBChanges">
+			<h2>Site ID: {{basicInfo.siteInfo.id}}</h2>
+		</div>
+		<table class="table" ng-if="siteBBChanges.ContentElement">
+			<thead>
+				<tr>
+					<th colspan="2"><h3>Content Elements</h3></th>
+				</tr>
+				<tr>
+					<th class="name-col">Name</th>
+					<th>Last Modified Date</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="change in siteBBChanges.ContentElement">
+					<td>{{change.name}}</td>
+					<td>{{change.lastModifiedDate}}</td>
+				</tr>
+			</tbody>
+		</table>
+		<table class="table" ng-if="siteBBChanges.Page">
+			<thead>
+				<tr>
+					<th colspan="2"><h3>Pages</h3></th>
+				</tr>
+				<tr>
+					<th class="name-col">Name</th>
+					<th>Last Modified Date</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="change in siteBBChanges.Page">
+					<td>{{change.name}}</td>
+					<td>{{change.lastModifiedDate}}</td>
+				</tr>
+			</tbody>
+		</table>
+		<table class="table" ng-if="siteBBChanges.Action">
+			<thead>
+				<tr>
+					<th colspan="2"><h3>Actions</h3></th>
+				</tr>
+				<tr>
+					<th class="name-col">Name</th>
+					<th>Last Modified Date</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="change in siteBBChanges.Action">
+					<td>{{change.name}}</td>
+					<td>{{change.lastModifiedDate}}</td>
+				</tr>
+			</tbody>
+		</table>
+		<h4 ng-if="!siteBBChanges.ContentElement&&!siteBBChanges.Page&&!siteBBChanges.Action">No Changes</h4>
+		<!--======styles======-->
+		<table class="table" ng-if="styleChanges">
+			<thead>
+				<tr>
+					<th colspan="4"><h3>Styles</h3></th>
+				</tr>
+				<tr>
+					<th>ID</th>
+					<th>Version</th>
+					<th class="name-col">Name</th>
+					<th>Last Modified Date</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="change in styleChanges">
+					<td>{{change.id}}</td>
+					<td>{{change.version}}</td>
+					<td>{{change.name}}</td>
+					<td>{{change.lastModifiedOn}}</td>
+				</tr>
+			</tbody>
+		</table>
+		<!--======content layouts======-->
+		<table class="table" ng-if="layoutChanges">
+			<thead>
+				<tr>
+					<th colspan="4"><h3>Content Layouts</h3></th>
+				</tr>
+				<tr>
+					<th>ID</th>
+					<th>Version</th>
+					<th class="name-col">Name</th>
+					<th>Last Modified Date</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="change in layoutChanges">
+					<td>{{change.id}}</td>
+					<td>{{change.version}}</td>
+					<td>{{change.pageName}}</td>
+					<td>{{change.versions[change.versions.length-1].lastModifiedDate}}</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<!--Big Blue changes (template level)-->
+		<div ng-if="tempBBChanges">
+			<h2>Template ID: {{basicInfo.templateInfo.id}}</h2>
+		</div>
+		<table class="table" ng-if="tempBBChanges.ContentElement">
+			<thead>
+				<tr>
+					<th colspan="2"><h3>Content Elements</h3></th>
+				</tr>
+				<tr>
+					<th class="name-col">Name</th>
+					<th>Last Modified Date</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="change in tempBBChanges.ContentElement">
+					<td>{{change.name}}</td>
+					<td>{{change.lastModifiedDate}}</td>
+				</tr>
+			</tbody>
+		</table>
+		<table class="table" ng-if="tempBBChanges.Page">
+			<thead>
+				<tr>
+					<th colspan="2"><h3>Pages</h3></th>
+				</tr>
+				<tr>
+					<th class="name-col">Name</th>
+					<th>Last Modified Date</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="change in tempBBChanges.Page">
+					<td>{{change.name}}</td>
+					<td>{{change.lastModifiedDate}}</td>
+				</tr>
+			</tbody>
+		</table>
+		<table class="table" ng-if="tempBBChanges.Action">
+			<thead>
+				<tr>
+					<th colspan="2"><h3>Actions</h3></th>
+				</tr>
+				<tr>
+					<th class="name-col">Name</th>
+					<th>Last Modified Date</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="change in tempBBChanges.Action">
+					<td>{{change.name}}</td>
+					<td>{{change.lastModifiedDate}}</td>
+				</tr>
+			</tbody>
+		</table>
+		<h4 ng-if="!tempBBChanges.ContentElement&&!tempBBChanges.Page&&!tempBBChanges.Action">No Changes</h4>
+		<div class="col-md-12">
+	      <button id="nextStep-btn" type="button" class="btn btn-primary func-btn" ng-click="onSubmit()">Next step</button>
+	    </div>
+	</div>
+</div>

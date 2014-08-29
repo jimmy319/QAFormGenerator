@@ -1,0 +1,34 @@
+<h1 class="title-txt">QA Form Generator</h1>
+<div id="login-view" class="row">
+	<div class="col-lg-4 col-lg-offset-4 col-md-4 col-md-offset-4 col-sm-4 col-sm-offset-4 well">
+		<form id="login-form" class="form-horizontal" role="form">
+			<!--account field-->
+			<div class="form-group" ng-class="{'has-error' : hasError}">
+				<label for="username" class="col-md-4 control-label">
+					User Name:
+				</label>
+				<div class="col-md-8">
+					<input ng-model="username" type="text" class="form-control" id="username" placeholder="GC account">
+				</div>
+			</div>
+			<!--password field-->
+			<div class="form-group" ng-class="{'has-error' : hasError}">
+				<label for="password" class="col-md-4 control-label">
+					Password:
+				</label>
+				<div class="col-md-8">
+					<input ng-model="pwd" type="password" class="form-control" id="password" placeholder="password">
+				</div>
+			</div>
+			<!--sign in button-->
+			<div class="form-group">
+			    <div class="col-md-12">
+			      <button id="login-btn" type="button" class="btn btn-primary func-btn" ng-click="onLogin()" ng-disabled="isProcessing">Sign in</button>
+			    </div>
+			</div>
+			<div class="form-group" ng-if="hasError">
+				<div class="alert alert-danger col-md-12" role="alert">{{errorMsg}}</div>
+			</div>
+		</form>
+	</div>
+</div>

@@ -1,0 +1,50 @@
+<h1 class="title-txt">Basic Information of SR</h1>
+<div class="row">
+	<form role="form" class="form-horizontal col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3">
+		<div class="form-group" ng-if="siteIDHasError||templateIDHasError">
+			<div class="alert alert-danger col-md-12" role="alert">{{errorMsg}}</div>
+		</div>
+		<!--Client name-->
+		<div class="form-group">
+			<label for="client" class="col-md-4 control-label">
+				Client:
+			</label>
+			<div class="col-md-8">
+				<input ng-model="client" type="text" class="form-control" id="client" placeholder="Razer">
+			</div>
+		</div>
+		<!--site ID-->
+		<div class="form-group" ng-class="{'has-error' : siteIDHasError}">
+			<label for="siteID" class="col-md-4 control-label">
+				siteID:
+			</label>
+			<div class="col-md-8">
+				<input ng-model="siteID" type="text" class="form-control" id="siteID" placeholder="razerusa">
+			</div>
+		</div>
+		<!--template ID-->
+		<div class="form-group" ng-class="{'has-error' : templateIDHasError}">
+			<label for="templateID" class="col-md-4 control-label">
+				templateID:
+			</label>
+			<div class="col-md-8">
+				<input ng-model="templateID" type="text" class="form-control" id="templateID" placeholder="AsusTek">
+			</div>
+		</div>
+		<!--ticket ID-->
+		<div class="form-group">
+			<label for="ticketID" class="col-md-4 control-label">
+				ticketID:
+			</label>
+			<div class="col-md-8">
+				<input ng-model="ticketID" type="text" class="form-control" id="ticketID" placeholder="3005487">
+			</div>
+		</div>
+		<!--submit button-->
+		<div class="form-group">
+		    <div class="col-md-12">
+		      <button id="nextStep-btn" type="button" class="btn btn-primary func-btn" ng-click="onSubmit()" ng-disabled="isProcessing">Next step</button>
+		    </div>
+		</div>
+	</form>
+</div>
