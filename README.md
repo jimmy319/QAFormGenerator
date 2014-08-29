@@ -5,10 +5,23 @@ QAFormGenerator
 
 Install generator-node-webkit
 
-    $ npm install -g generator-node-webkit
+    > npm install -g generator-node-webkit
 
-Create a folder for you application, e.g.
-
-    $ mkdir QAFormGenerator
+Clone git repo from:
     
-Move to the folder you've created, clone the
+Move to the newly folder, run:
+
+    > yo node-webkit
+    
+Note: Make sure that you have select the Windows as supported os during the installation.
+
+Install dependencies:
+
+    > npm install
+    
+###Package and distributing the application###
+Will generate a .zip file in 'dist' folder. 
+
+    > grunt dist-win
+    
+
