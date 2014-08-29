@@ -8,6 +8,8 @@ Install generator-node-webkit
     > npm install -g generator-node-webkit
 
 Clone git repo from:
+
+    $ git clone https://github.digitalriverws.net/jtseng/QAFormGenerator.git
     
 Move to the newly folder, run:
 
